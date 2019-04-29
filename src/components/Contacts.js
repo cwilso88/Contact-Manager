@@ -4,17 +4,26 @@ import { Consumer } from '../context';
 
 class Contacts extends Component {
 
+  
+  
+
   render() {
-      const { contacts } = this.state;
     return (
-      <React.Fragment>
-        {contacts.map(contact => (
+      <Consumer>
+        {value => {
+          const { contacts } = value;
+          return(
+            <React.Fragment>
+            {contacts.map(contact => (
             <Contact 
                 key={contact.id}
                 contact={contact}
             />
         ))}
       </React.Fragment>
+          )
+        }}
+      </Consumer>
     )
   }
 }
