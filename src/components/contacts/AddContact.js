@@ -53,42 +53,29 @@ class AddContact extends Component {
             phone
         } = this.state;
 
-        return ( <
-            Consumer > {
+        return ( 
+        <Consumer> {
                 value => {
                     const {
                         dispatch
                     } = value;
-                    return ( <
-                        div className = "card mb-3" >
-                        <
-                        div className = "card-header" >
-                        Add Contact <
-                        div className = "card-body" >
-                        <
-                        form onSubmit = {
-                            this.onSubmit.bind(this, dispatch)
-                        } >
-                        <
-                        div className = "form-group" >
-                        <
-                        label htmlFor = "name" > Name < /label> <
-                        input onChange = {
-                            this.onChange
-                        }
-                        type = "text"
-                        name = "name"
-                        value = {
-                            name
-                        }
-                        className = "form-control form-control-lg"
-                        placeholder = "Enter Name Here..." / >
-                        <
-                        /div> <
-                        div className = "form-group" >
-                        <
-                        label htmlFor = "email" > Email < /label> <
-                        input onChange = {
+                    return ( 
+                        <div className = "card mb-3" >
+                            <div className = "card-header"> Add Contact 
+                                <div className = "card-body">
+                                    <form onSubmit = {this.onSubmit.bind(this, dispatch)}>
+                                        <div className = "form-group">
+                                                <label htmlFor = "name" > Name </label> 
+                                                <input onChange = {this.onChange}
+                                                            type = "text"
+                                                            name = "name"
+                                                            value = {name}
+                                                            className = "form-control form-control-lg"
+                                                            placeholder = "Enter Name Here..." />
+                        </div> 
+                        <div className = "form-group" >
+                        <label htmlFor = "email" > Email </label> 
+                        <input onChange = {
                             this.onChange
                         }
                         type = "email"
@@ -97,13 +84,11 @@ class AddContact extends Component {
                             email
                         }
                         className = "form-control form-control-lg"
-                        placeholder = "Enter Email Here..." / >
-                        <
-                        /div> <
-                        div className = "form-group" >
-                        <
-                        label htmlFor = "phone" > Phone < /label> <
-                        input onChange = {
+                        placeholder = "Enter Email Here..." />
+                        </div> 
+                        <div className = "form-group" >
+                        <label htmlFor = "phone" > Phone </label> 
+                        <input onChange = {
                             this.onChange
                         }
                         type = "text"
@@ -112,21 +97,19 @@ class AddContact extends Component {
                             phone
                         }
                         className = "form-control form-control-lg"
-                        placeholder = "Enter Phone Number..." / >
-                        <
-                        /div> <
-                        input type = "submit"
+                        placeholder = "Enter Phone Number..." />
+                        </div> 
+                        <input type = "submit"
                         value = "Add Contact"
-                        className = "btn btn-dark btn-block" / >
-                        <
-                        /form> <
-                        /div> <
-                        /div> <
-                        /div>
+                        className = "btn btn-dark btn-block" />
+                        </form> 
+                        </div> 
+                        </div> 
+                        </div>
                     )
                 }
-            } <
-            /Consumer>
+            } 
+            </Consumer>
         )
     }
 }
