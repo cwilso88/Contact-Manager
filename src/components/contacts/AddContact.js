@@ -5,7 +5,10 @@ class AddContact extends Component {
         name: '',
         email: '',
         phone: ''
-    }
+    };
+
+    onChange = e => this.setState({ [e.target.name]: e.target.value });
+
     render() {
         const { name, email, phone } = this.state;
         return (
@@ -16,15 +19,15 @@ class AddContact extends Component {
                         <form>
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
-                                <input type="text" name="name" value={name} className="form-control form-control-lg" placeholder="Enter Name Here..."/>
+                                <input onChange={this.onChange} type="text" name="name" value={name} className="form-control form-control-lg" placeholder="Enter Name Here..."/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
-                                <input type="email" name="email" value={email} className="form-control form-control-lg" placeholder="Enter Email Here..."/>
+                                <input onChange={this.onChange} type="email" name="email" value={email} className="form-control form-control-lg" placeholder="Enter Email Here..."/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="phone">Phone</label>
-                                <input type="text" name="phone" value={phone} className="form-control form-control-lg" placeholder="Enter Phone Number..."/>
+                                <input onChange={this.onChange} type="text" name="phone" value={phone} className="form-control form-control-lg" placeholder="Enter Phone Number..."/>
                             </div>
                             <input type="submit" value="Add Contact" className="btn btn-dark btn-block"/>
                         </form>
