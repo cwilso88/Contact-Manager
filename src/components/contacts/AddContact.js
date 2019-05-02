@@ -31,14 +31,17 @@ class AddContact extends Component {
         // Check fields for errors
         if(name === '') {
             this.setState({errors: {name: 'Please enter name'}});
+            return;
         }
 
         if(email === '') {
             this.setState({errors: {email: 'Please enter email'}});
+            return;
         }
 
         if(phone === '') {
             this.setState({errors: {phone: 'Please add phone number'}});
+            return;
         }
 
         const newContact = {

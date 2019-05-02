@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import classnames from 'classname';
 
 const TextInputGroup = ({
     label,
@@ -14,13 +15,16 @@ const TextInputGroup = ({
         <div className="form-group">
             <label htmlFor={name}>{label}</label>
             <input 
-                className="form-control form-control-lg"
+                className={classnames('form-control form-control-lg', {
+                    'is-invalid': error
+                })}
                 type={type}
                 name={name}
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}
             />
+            {error && <div className="invalid-feedback">{error}</div> }
         </div>
     );
 };
@@ -30,7 +34,8 @@ TextInputGroup.propTypes = {
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    error: PropTypes.string
 }
 
 TextInputGroup.defaultProps = {
