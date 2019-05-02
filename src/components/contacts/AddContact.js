@@ -57,7 +57,8 @@ class AddContact extends Component {
         this.setState({
             name: '',
             email: '',
-            phone: ''
+            phone: '',
+            errors: ''
         });
     };
 
