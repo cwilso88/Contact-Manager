@@ -10,9 +10,7 @@ class AddContact extends Component {
         name: '',
         email: '',
         phone: '',
-        errors: {
-            name: 'Name is required'
-        }
+        errors: {}
     };
 
     //All of the functions 
