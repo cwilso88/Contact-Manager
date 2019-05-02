@@ -9,7 +9,10 @@ class AddContact extends Component {
     state = {
         name: '',
         email: '',
-        phone: ''
+        phone: '',
+        errors: {
+            name: 'Name is required'
+        }
     };
 
     //All of the functions 
@@ -24,6 +27,19 @@ class AddContact extends Component {
             email,
             phone
         } = this.state;
+
+        // Check fields for errors
+        if(name === '') {
+            this.setState({errors: {name: 'Please enter name'}});
+        }
+
+        if(email === '') {
+            this.setState({errors: {email: 'Please enter email'}});
+        }
+
+        if(phone === '') {
+            this.setState({errors: {phone: 'Please add phone number'}});
+        }
 
         const newContact = {
             id: uuid(),
@@ -86,7 +102,7 @@ class AddContact extends Component {
                                     <input 
                                         type="submit" 
                                         value="Add Contact"
-                                        className="btn btn-light btn-block"
+                                        className="btn btn-dark btn-block"
                                     />
                                 </form>
                             </div>
