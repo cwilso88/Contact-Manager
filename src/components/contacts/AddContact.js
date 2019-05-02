@@ -58,7 +58,7 @@ class AddContact extends Component {
             name: '',
             email: '',
             phone: '',
-            errors: ''
+            errors: {}
         });
     };
 
@@ -66,7 +66,8 @@ class AddContact extends Component {
         const {
             name,
             email,
-            phone
+            phone,
+            errors
         } = this.state;
 
         return ( 
@@ -84,6 +85,7 @@ class AddContact extends Component {
                                         placeholder="Enter Name"
                                         value={name}
                                         onChange={this.onChange}
+                                        error={errors.name}
                                     />
                                     <TextInputGroup 
                                         label="Email"
@@ -92,6 +94,7 @@ class AddContact extends Component {
                                         placeholder="Enter Email"
                                         value={email}
                                         onChange={this.onChange}
+                                        error={errors.email}
                                     />
                                     <TextInputGroup 
                                         label="Phone"
@@ -99,6 +102,7 @@ class AddContact extends Component {
                                         placeholder="Enter Phone Number..."
                                         value={phone}
                                         onChange={this.onChange}
+                                        error={errors.phone}
                                     />
                                     <input 
                                         type="submit" 
