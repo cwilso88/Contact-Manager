@@ -8,6 +8,7 @@ const TextInputGroup = ({
     placeholder,
     type,
     onChange, 
+    error
 }) => {
     return (
         <div className="form-group">
