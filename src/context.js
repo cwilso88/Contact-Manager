@@ -31,8 +31,9 @@ export class Provider extends Component {
 
     // Lifecycle Method
     async componentDidMount() {
+        // saved the get response to a variable 
         const res = await axios.get('https://jsonplaceholder.typicode.com/users');
-
+        // used the new variable.data to setState
         this.setState({contacts: res.data});
              
 }
