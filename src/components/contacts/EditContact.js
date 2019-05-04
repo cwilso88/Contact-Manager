@@ -42,18 +42,6 @@ class EditContact extends Component {
             return;
         }
 
-        const newContact = {
-            name,
-            email,
-            phone
-        }
-
-        // Send POST request to the API
-        const res = await axios.post('https://jsonplaceholder.typicode.com/users', newContact);
-            dispatch({
-                type: 'ADD_CONTACT',
-                payload: res.data
-            });
 
         // Clear State
         this.setState({
@@ -80,7 +68,7 @@ class EditContact extends Component {
                     const { dispatch } = value;
                     return (
                         <div className="card mb-3">
-                            <div className="card-header text-center">Add Contact</div>
+                            <div className="card-header text-center">Edit Contact</div>
                             <div className="card-body">
                                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                                     <TextInputGroup 
@@ -110,7 +98,7 @@ class EditContact extends Component {
                                     />
                                     <input 
                                         type="submit" 
-                                        value="Add Contact"
+                                        value="Update Contact"
                                         className="btn btn-dark btn-block"
                                     />
                                 </form>
